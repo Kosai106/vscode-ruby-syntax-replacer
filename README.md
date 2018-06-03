@@ -1,65 +1,64 @@
-# ruby-syntax-replacer README
-
-This is the README for your extension "ruby-syntax-replacer". After writing up a brief description, we recommend including the following sections.
+# ruby-syntax-replacer
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Replace your old syntax...
 
-For example if there is an image subfolder under your extension project workspace:
+```ruby
+@data = [
+  {:location => "Lebanon", :title => "K Frame", :place => "Based in Beirut"},
+  {:location => "Germany", :title => "Xolo", :place => "Based in Berlin"},
+  {:location => "Germany", :title => "Lichtecht", :place => "Based in Hamburg"},
+  {:location => "Netherlands", :title => "Triple-D", :place => "Based in Amsterdam"},
+  {:location => "Spain", :title => "Fresh House", :place => "Based in Zaragoza"},
+  {:location => "Poland", :title => "Motiv", :place => "Based in Gdansk"},
+  {:location => "Italy", :title => "Gayarre Infografia", :place => "Based in Venice"},
+  {:location => "Italy", :title => "ATviz", :place => "Based in Rome"}
+]
+```
 
-\!\[feature X\]\(images/feature-x.png\)
+... With the new!
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```ruby
+@data = [
+  {location: "Lebanon", title: "K Frame", place: "Based in Beirut"},
+  {location: "Germany", title: "Xolo", place: "Based in Berlin"},
+  {location: "Germany", title: "Lichtecht", place: "Based in Hamburg"},
+  {location: "Netherlands", title: "Triple-D", place: "Based in Amsterdam"},
+  {location: "Spain", title: "Fresh House", place: "Based in Zaragoza"},
+  {location: "Poland", title: "Motiv", place: "Based in Gdansk"},
+  {location: "Italy", title: "Gayarre Infografia", place: "Based in Venice"},
+  {location: "Italy", title: "ATviz", place: "Based in Rome"}
+]
+```
 
-## Requirements
+It works very well in HAML too.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+From:
 
-## Extension Settings
+```haml
+%div{:data => {:someValue => "Hello world", :"other-value" => 123, :"some-really-long-attr" => true}}
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+To:
 
-For example:
+```haml
+%div{data: {someValue: "Hello world", "other-value": 123, "some-really-long-attr": true}}
+```
 
-This extension contributes the following settings:
+## TODO
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Format on save
+- Format selection
+- Reverse format
+- reverse format selection
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release of `ruby-syntax-replacer`
 
 ### 1.0.1
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Added support for long dashed attributes

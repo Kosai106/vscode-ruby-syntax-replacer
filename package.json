@@ -2,7 +2,7 @@
   "name": "ruby-syntax-replacer",
   "displayName": "Ruby Syntax Replacer",
   "description": "Replaces old Ruby syntax with new",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "publisher": "Kosai106",
   "author": {
     "name": "Kevin Østerkilde",
@@ -17,7 +17,7 @@
   "engines": {
     "vscode": "^1.23.0"
   },
-  "categories": ["Programming Languages", "Formatters"],
+  "categories": ["Formatters"],
   "activationEvents": ["onCommand:extension.rubyReplace"],
   "main": "./src/extension",
   "contributes": {

@@ -11,7 +11,7 @@ const activate = context => {
 
     if (editor && document.languageId === "ruby" || document.languageId === "haml") {
       const text = document.getText();
-      const regex = /:("?\w+"?)\s?=>\s?/g;
+      const regex = /:("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g;
 
       const formatted = text.replace(regex, '$1: ');
       
