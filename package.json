@@ -8,6 +8,7 @@
     "name": "Kevin Østerkilde",
     "email": "kevin@oesterkilde.dk"
   },
+  "license": "SEE LICENSE IN LICENSE",
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#141c22",
@@ -45,12 +46,12 @@
     "vscode": "^1.1.18"
   },
   "bugs": {
-    "url": "https://github.com/Microsoft/vscode-wordcount/issues"
+    "url": "https://github.com/Kosai106/vscode-ruby-syntax-replacer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/vscode-wordcount.git"
+    "url": "https://github.com/Kosai106/vscode-ruby-syntax-replacer.git"
   },
   "homepage":
-    "https://github.com/Microsoft/vscode-wordcount/blob/master/README.md"
+    "https://github.com/Kosai106/vscode-ruby-syntax-replacer/blob/master/README.md"
 }
