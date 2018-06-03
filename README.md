@@ -46,13 +46,6 @@ To:
 %div{data: {someValue: "Hello world", "other-value": 123, "some-really-long-attr": true}}
 ```
 
-## TODO
-
-- Format on save
-- Format selection
-- Reverse format
-- reverse format selection
-
 ## Release Notes
 
 ### 1.0.0
@@ -61,4 +54,4 @@ Initial release of `ruby-syntax-replacer`
 
 ### 1.0.1
 
-Added support for long dashed attributes
+Added support for dashed attributes
