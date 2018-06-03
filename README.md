@@ -48,6 +48,6 @@ Initial release of `ruby-syntax-replacer`
 
 Added support for dashed attributes
 
-### 1.0.2
+### 1.0.3
 
 Added removal of trailling `/`s of self-closing tags
