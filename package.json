@@ -1,0 +1,56 @@
+{
+  "name": "ruby-syntax-replacer",
+  "displayName": "Ruby Syntax Replacer",
+  "description": "Replaces old Ruby syntax with new",
+  "version": "0.0.1",
+  "publisher": "Kosai106",
+  "author": {
+    "name": "Kevin Østerkilde",
+    "email": "kevin@oesterkilde.dk"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#141c22",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "categories": ["Programming Languages", "Formatters"],
+  "activationEvents": ["onCommand:extension.rubyReplace"],
+  "main": "./src/extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ruby",
+        "aliases": ["ruby", "Ruby", "haml", "Haml", "HAML"],
+        "extensions": [".rb", ".erb", ".haml"]
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.rubyReplace",
+        "title": "Replace Ruby syntax"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "eslint": "^4.11.0",
+    "vscode": "^1.1.18"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/vscode-wordcount/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-wordcount.git"
+  },
+  "homepage":
+    "https://github.com/Microsoft/vscode-wordcount/blob/master/README.md"
+}
