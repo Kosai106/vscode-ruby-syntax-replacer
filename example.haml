@@ -1,0 +1,10 @@
+- @data = [
+	{location: "Lebanon", title: "K Frame", place: "Based in Beirut"},
+  {location: "Germany", title: "Xolo", place: "Based in Berlin"},
+  {location: "Germany", title: "Lichtecht", place: "Based in Hamburg"}
+]
+
+- @data.each do |x|
+	%p{:data => {:id => x[:id]}}= "#{x[:location]} - #{x[:title]}"
+
+	%link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon-precomposed", :sizes => "57x57"}/

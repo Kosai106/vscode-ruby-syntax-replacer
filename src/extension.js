@@ -16,9 +16,10 @@ exports.activate = function(context) {
       document.languageId === "html.erb"
     ) {
       const text = document.getText();
-      const regex = /:("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g;
+      const arrows = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?(=>|,)\s?/g;
+      const trails = /(\})\//g;
 
-      const formatted = text.replace(regex, "$1: ");
+      const formatted = text.replace(arrows, "$1: ").replace(trails, "$1");
 
       const fullRange = new Range(
         document.positionAt(0),
