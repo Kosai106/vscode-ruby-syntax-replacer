@@ -3,27 +3,37 @@ _Goodbye old hash rocket syntax_
 
 ## Features
 
+RUBY
+```ruby
+# Old syntax
+data = [
+  {:location => "Lebanon", :title => "K Frame", :place => "Based in Beirut"},
+  {:location => "Germany", :title => "Xolo", :place => "Based in Berlin"},
+  {:location => "Germany", :title => "Lichtecht", :place => "Based in Hamburg"}
+]
+
+# New syntax
+data = [
+  {location: "Lebanon", title: "K Frame", place: "Based in Beirut"},
+  {location: "Germany", title: "Xolo", place: "Based in Berlin"},
+  {location: "Germany", title: "Lichtecht", place: "Based in Hamburg"}
+]
+```
+
+HAML
 ```haml
 -# Old syntax
-- data = [{:location => "Lebanon", :title => "K Frame", :place => "Based in Beirut"}, {:location => "Germany", :title => "Xolo", :place => "Based in Berlin"}, {:location => "Germany", :title => "Lichtecht", :place => "Based in Hamburg"}]
-
 %div{:data => {:someValue => "Hello world", :"other-value" => 123, :"some-really-long-attr" => true}}
 
-//-----------------------//
-
 -# New syntax
-- data = [{location: "Lebanon", title: "K Frame", place: "Based in Beirut"}, {location: "Germany", title: "Xolo", place: "Based in Berlin"}, {location: "Germany", title: "Lichtecht", place: "Based in Hamburg"}]
-
 %div{data: {someValue: "Hello world", "other-value": 123, "some-really-long-attr": true}}
 ```
 
-And as an added bonus, it also removes trailing `/`s from self-closing tags in HAML.
+And as an added bonus, it also removes trailing `/`s from self-closing tags.
 
 ```haml
 -# Old syntax
 %link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon-precomposed", :sizes => "57x57"}/
-
-//-----------------------//
 
 -# New syntax
 %link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), rel: "apple-touch-icon-precomposed", sizes: "57x57"}
