@@ -27,16 +27,15 @@ exports.activate = function(context) {
           document.positionAt(document.getText().length)
         );
         edit.replace(document.uri, fullRange, formatted);
-        window.setStatusBarMessage("Ruby syntax replaced", 3000);
-        return workspace.applyEdit(edit);
       } else {
         const position = editor.selection;
         const selectionRange = new Range(position.start, position.end);
         const formatted = document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1");
         edit.replace(document.uri, selectionRange, formatted);
-        window.setStatusBarMessage("Ruby syntax replaced", 3000);
-        return workspace.applyEdit(edit);
       }
+      // window.setStatusBarMessage("Ruby syntax replaced", 3000);
+      window.showInformationMessage("Ruby syntax replaced");
+      return workspace.applyEdit(edit);
     } else {
       window.showErrorMessage("Not a Ruby file");
     }

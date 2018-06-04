@@ -1,9 +1,9 @@
-# ruby-syntax-replacer
+# Ruby Syntax Replacer for VSCode
 _Goodbye old hash rocket syntax_
 
 ## Features
 
-RUBY
+Ruby
 ```ruby
 # Old syntax
 data = [
@@ -33,10 +33,10 @@ And as an added bonus, it also removes trailing `/`s from self-closing tags.
 
 ```haml
 -# Old syntax
-%a{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon-precomposed", :sizes => "57x57"}/
+%link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon-precomposed", :sizes => "57x57"}/
 
 -# New syntax
-%a{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), rel: "apple-touch-icon-precomposed", sizes: "57x57"}
+%link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), rel: "apple-touch-icon-precomposed", sizes: "57x57"}
 ```
 
 ## Release Notes
