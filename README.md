@@ -1,4 +1,5 @@
 # ruby-syntax-replacer
+_Goodbye old hash rocket syntax_
 
 ## Features
 
