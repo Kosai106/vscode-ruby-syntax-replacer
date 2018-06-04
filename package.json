@@ -2,7 +2,7 @@
   "name": "ruby-syntax-replacer",
   "displayName": "Ruby Syntax Replacer",
   "description": "Replaces old Ruby syntax with new",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "publisher": "Kosai106",
   "author": {
     "name": "Kevin Østerkilde",

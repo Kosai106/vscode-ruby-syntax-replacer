@@ -52,3 +52,7 @@ Added support for dashed attributes
 ### 1.0.3
 
 Added removal of trailling `/`s of self-closing tags
+
+### 1.0.6
+
+Added support for only selection-only changes
