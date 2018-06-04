@@ -16,7 +16,7 @@ exports.activate = function(context) {
       document.languageId === "html.erb"
     ) {
       const text = document.getText();
-      const arrows = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?(=>|,)\s?/g;
+      const arrows = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g;
       const trails = /(\})\//g;
 
       const formatted = text.replace(arrows, "$1: ").replace(trails, "$1");

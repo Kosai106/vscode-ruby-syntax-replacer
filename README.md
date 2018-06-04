@@ -35,7 +35,7 @@ And as an added bonus, it also removes trailing `/`s from self-closing tags in H
 ```
 Into
 ```haml
-%link{href: asset_path(images:, "favicon/apple-touch-icon-57x57.png"), rel: "apple-touch-icon-precomposed", sizes: "57x57"}
+%link{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), rel: "apple-touch-icon-precomposed", sizes: "57x57"}
 ```
 
 ## Release Notes
