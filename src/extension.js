@@ -1,4 +1,4 @@
-const { commands, window, workspace, WorkspaceEdit, Range, Selection, TextEdit } = require("vscode");
+const { commands, window, workspace, WorkspaceEdit, Range } = require("vscode");
 
 exports.activate = function(context) {
   let disposable = commands.registerCommand("extension.rubyReplace", () => {
@@ -21,18 +21,23 @@ exports.activate = function(context) {
       let edit = new WorkspaceEdit();
 
       if (editor.selection.isEmpty) {
-        const formatted = document.getText().replace(arrows, "$1: ").replace(trails, "$1");
-        const fullRange = new Range(
-          document.positionAt(0),
-          document.positionAt(document.getText().length)
+        edit.replace(
+          document.uri,
+          new Range(
+            document.positionAt(0),
+            document.positionAt(document.getText().length)
+          ),
+          document.getText().replace(arrows, "$1: ").replace(trails, "$1")
         );
-        edit.replace(document.uri, fullRange, formatted);
       } else {
         editor.selections.map(select => {
           const position = select;
           const selectionRange = new Range(position.start, position.end);
-          const formatted = document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1");
-          edit.replace(document.uri, selectionRange, formatted);
+          edit.replace(
+            document.uri,
+            selectionRange,
+            document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1")
+          );
         })
       }
       window.showInformationMessage("Ruby syntax replaced");

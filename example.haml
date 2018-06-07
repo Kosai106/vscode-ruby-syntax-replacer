@@ -1,10 +1,10 @@
 - @data = [
-  {:location => "Lebanon", :title => "K Frame", :place => "Based in Beirut"},
-  {:location => "Germany", :title => "Xolo", :place => "Based in Berlin"},
-  {:location => "Germany", :title => "Lichtecht", :place => "Based in Hamburg"}
+  {:id => 1, :location => "Lebanon", :title => "K Frame", :place => "Based in Beirut"},
+  {:id => 2, :location => "Germany", :title => "Xolo", :place => "Based in Berlin"},
+  {:id => 3, :location => "Germany", :title => "Lichtecht", :place => "Based in Hamburg"}
 ]
 
 - @data.each do |x|
-  %p{:data => {:id => x[:id]}}= "#{x[:location]} - #{x[:title]}"
+  %p{:id => x[:id], :data => {:location => x[:location]}}= "#{x[:title]} - #{x[:place]}"
 
 %a{href: asset_path(:images, "favicon/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon-precomposed", :sizes => "57x57"}/
