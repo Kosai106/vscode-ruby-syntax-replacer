@@ -29,6 +29,7 @@ exports.activate = function(context) {
           ),
           document.getText().replace(arrows, "$1: ").replace(trails, "$1")
         );
+        console.log(edit);
       } else {
         editor.selections.map(select => {
           const position = select;
@@ -39,8 +40,9 @@ exports.activate = function(context) {
             document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1")
           );
         })
+        console.log(edit);
       }
-      window.showInformationMessage("Ruby syntax replaced");
+      window.setStatusBarMessage('Ruby syntax replaced', 3000);
       return workspace.applyEdit(edit);
     } else {
       window.showErrorMessage("Not a Ruby file");
