@@ -28,12 +28,13 @@ exports.activate = function(context) {
         );
         edit.replace(document.uri, fullRange, formatted);
       } else {
-        const position = editor.selection;
-        const selectionRange = new Range(position.start, position.end);
-        const formatted = document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1");
-        edit.replace(document.uri, selectionRange, formatted);
+        editor.selections.map(select => {
+          const position = select;
+          const selectionRange = new Range(position.start, position.end);
+          const formatted = document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1");
+          edit.replace(document.uri, selectionRange, formatted);
+        })
       }
-      // window.setStatusBarMessage("Ruby syntax replaced", 3000);
       window.showInformationMessage("Ruby syntax replaced");
       return workspace.applyEdit(edit);
     } else {
