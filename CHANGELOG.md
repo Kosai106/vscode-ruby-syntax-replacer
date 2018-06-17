@@ -1,7 +1,34 @@
 # Change Log
 All notable changes to the "ruby-syntax-replacer" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
-- Initial release
+- Initial release of `ruby-syntax-replacer`
+
+## [1.0.1] - 2018-06-03
+### Added
+
+- Support for dashed attributes
+
+### [1.0.3] - 2018-06-03
+### Added
+
+- Removal of trailling `/`s after self-closing tags
+
+### [1.0.6] - 2018-06-04
+### Added
+
+- Support for selection-only replacements
+
+### [1.0.7] - 2018-06-07
+### Fixed
+
+- Multi-line selections not working correctly
+
+### [1.0.9] - 2018-06-17
+### Changed
+
+- Moved changelog out of README into CHANGELOG
+
+### Fixed
+
+- RegExp to handle all formats for old style ruby hash (Thanks to @kjwierenga)

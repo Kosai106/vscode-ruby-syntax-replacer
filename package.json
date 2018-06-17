@@ -2,12 +2,12 @@
   "name": "ruby-syntax-replacer",
   "displayName": "Ruby Syntax Replacer",
   "description": "Replaces old Ruby syntax with new",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "publisher": "Kosai106",
-  "author": {
-    "name": "Kevin Østerkilde",
-    "email": "kevin@oesterkilde.dk"
-  },
+  "author": "Kevin Østerkilde <kevin@oesterkilde.dk> (https://oesterkilde.dk/)",
+  "contributors": [
+    "Klaas Jan Wierenga <k.j.wierenga@gmail.com> (http://kerkdienstgemist.nl)"
+  ],
   "license": "SEE LICENSE IN LICENSE",
   "icon": "icon.png",
   "galleryBanner": {
