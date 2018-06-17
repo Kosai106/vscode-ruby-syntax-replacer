@@ -15,8 +15,8 @@ exports.activate = function(context) {
       document.languageId === "erb" ||
       document.languageId === "html.erb"
     ) {
-      const arrows = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g;
-      const trails = /(\})\//g;
+      const pattern = /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g;
+      const replacement = "$1$2: $3$4";
 
       let edit = new WorkspaceEdit();
 
@@ -27,7 +27,7 @@ exports.activate = function(context) {
             document.positionAt(0),
             document.positionAt(document.getText().length)
           ),
-          document.getText().replace(arrows, "$1: ").replace(trails, "$1")
+          document.getText().replace(pattern, replacement)
         );
         console.log(edit);
       } else {
@@ -37,7 +37,7 @@ exports.activate = function(context) {
           edit.replace(
             document.uri,
             selectionRange,
-            document.getText(selectionRange).replace(arrows, "$1: ").replace(trails, "$1")
+            document.getText(selectionRange).replace(pattern, replacement)
           );
         })
         console.log(edit);
