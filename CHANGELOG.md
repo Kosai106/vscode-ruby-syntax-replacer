@@ -25,6 +25,10 @@ All notable changes to the "ruby-syntax-replacer" extension will be documented i
 - Multi-line selections not working correctly
 
 ### [1.0.9] - 2018-06-17
+### Removed
+
+- Trailing `/`'s after self-closing tags
+
 ### Changed
 
 - Moved changelog out of README into CHANGELOG
