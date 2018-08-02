@@ -25,7 +25,7 @@
       {
         "id": "ruby",
         "aliases": ["ruby", "Ruby", "haml", "Haml", "HAML"],
-        "extensions": [".rb", ".erb", ".haml"]
+        "extensions": [".rb", ".erb", ".html.erb", ".haml", "html.haml"]
       }
     ],
     "commands": [

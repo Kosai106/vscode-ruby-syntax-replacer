@@ -9,14 +9,12 @@ exports.activate = function(context) {
     const editor = window.activeTextEditor;
     const document = editor.document;
 
-    if (
-      (editor && document.languageId === "ruby") ||
-      document.languageId === "haml" ||
-      document.languageId === "erb" ||
-      document.languageId === "html.erb"
-    ) {
-      const pattern = /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g;
-      const replacement = "$1$2: $3$4";
+    if (editor && document.languageId === "ruby" || document.languageId === "haml" || document.languageId === "erb") {
+      // const pattern = /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g;
+      // const pattern = /([^:]|^):?(("|')?(\w+)("|')?)\s?(\s*)=>\s?(\s*)/g;
+      // const pattern = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g
+      const pattern = /:?(["|']?[\w-?]+["|']?)+\s*?=>\s*/g
+      const replacement = "$1: ";
 
       let edit = new WorkspaceEdit();
 
@@ -29,7 +27,6 @@ exports.activate = function(context) {
           ),
           document.getText().replace(pattern, replacement)
         );
-        console.log(edit);
       } else {
         editor.selections.map(select => {
           const position = select;
@@ -40,7 +37,6 @@ exports.activate = function(context) {
             document.getText(selectionRange).replace(pattern, replacement)
           );
         })
-        console.log(edit);
       }
       window.setStatusBarMessage('Ruby syntax replaced', 3000);
       return workspace.applyEdit(edit);
