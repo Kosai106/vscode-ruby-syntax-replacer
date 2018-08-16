@@ -49,4 +49,4 @@ All notable changes to the `ruby-syntax-replacer` extension will be documented i
 ## [1.0.12] - 2018-08-16
 ### Changed
 
-- Expanded regex match
+- Expanded Regex match
