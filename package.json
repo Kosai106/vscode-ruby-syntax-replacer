@@ -8,7 +8,7 @@
   "contributors": [
     "Klaas Jan Wierenga <k.j.wierenga@gmail.com> (http://kerkdienstgemist.nl)"
   ],
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#141c22",
