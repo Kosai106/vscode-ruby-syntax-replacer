@@ -10,10 +10,7 @@ exports.activate = function(context) {
     const document = editor.document;
 
     if (editor && document.languageId === "ruby" || document.languageId === "haml" || document.languageId === "erb") {
-      // const pattern = /([^:]|^):(\w+)\s?(\s*)=>\s?(\s*)/g;
-      // const pattern = /([^:]|^):?(("|')?(\w+)("|')?)\s?(\s*)=>\s?(\s*)/g;
-      // const pattern = /:?("?(\w+|([\w+]*-[\w+]*)+)"?)\s?=>\s?/g
-      const pattern = /:?(["|']?[\w-?]+["|']?)+\s*?=>\s*/g
+      const pattern = /:?(["|']?(\w[^\w\s]?)+["|']?)+\s*?=>\s*/g
       const replacement = "$1: ";
 
       let edit = new WorkspaceEdit();

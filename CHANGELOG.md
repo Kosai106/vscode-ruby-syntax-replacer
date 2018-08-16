@@ -1,5 +1,5 @@
 # Change Log
-All notable changes to the "ruby-syntax-replacer" extension will be documented in this file.
+All notable changes to the `ruby-syntax-replacer` extension will be documented in this file.
 
 ## [Unreleased]
 - Initial release of `ruby-syntax-replacer`
@@ -45,3 +45,8 @@ All notable changes to the "ruby-syntax-replacer" extension will be documented i
 ### Added
 
 - Support for `.html.erb` and `.html.haml` files
+
+## [1.0.12] - 2018-08-16
+### Changed
+
+- Expanded regex match
