@@ -7,7 +7,6 @@ Ruby
 ```ruby
 # Old syntax
 data = [
-  { 1 => "en", 2 => "to", 3 => "tre" },
   { :one => "un", :two => "deux", :three => "trois" },
   { "weights" => ["pound", "kilogram"], "lengths" => ["meter", "mile"] },
   { :de => { :one => "eins", :two => "zwei", :three => "drei" } }
@@ -15,7 +14,6 @@ data = [
 
 # New syntax
 data = [
-  { 1: "en", 2: "to", 3: "tre" },
   { one: "un", two: "deux", three: "trois" },
   { "weights": ["pound", "kilogram"], "lengths": ["meter", "mile"] },
   { de: { one: "eins", two: "zwei", three: "drei" } }
